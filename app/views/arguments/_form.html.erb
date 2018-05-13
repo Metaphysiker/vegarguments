@@ -1,0 +1,32 @@
+<%= form_with(model: argument, local: true) do |form| %>
+  <% if argument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(argument.errors.count, "error") %> prohibited this argument from being saved:</h2>
+
+      <ul>
+      <% argument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :argument_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :question %>
+    <%= form.text_field :question, id: :argument_question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer %>
+    <%= form.text_field :answer, id: :argument_answer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
