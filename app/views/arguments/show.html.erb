@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @argument.title %>
-</p>
+<div class="jumbotron jumbotron-bg">
+  <h3>
+    <%= @argument.question %>
+  </h3>
+  <p>
+    <%= @argument.answer %>
+  </p>
+</div>
 
-<p>
-  <strong>Question:</strong>
-  <%= @argument.question %>
-</p>
 
-<p>
-  <strong>Answer:</strong>
-  <%= @argument.answer %>
-</p>
 
 <%= link_to 'Edit', edit_argument_path(@argument) %> |
 <%= link_to 'Back', arguments_path %>
