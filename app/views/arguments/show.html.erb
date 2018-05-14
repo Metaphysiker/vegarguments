@@ -5,7 +5,10 @@
     <%= @argument.question %>
   </h3>
   <p>
-    <%= @argument.answer %>
+    <%= @argument.quickanswer %>
+  </p>
+  <p>
+    <%= sanitize @argument.longanswer %>
   </p>
 </div>
 

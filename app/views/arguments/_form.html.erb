@@ -17,11 +17,19 @@
   </div>
 
   <div class="field">
-    <%= form.label :answer %>
-    <%= form.text_field :answer, id: :argument_answer %>
+    <%= form.label :quickanswer %>
+    <%= form.text_field :quickanswer, id: :argument_quickanswer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longanswer %>
+    <%= form.text_area :longanswer, :class => "tinymce", :rows => 40, :cols => 120, id: :argument_longanswer %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<%= tinymce %>
