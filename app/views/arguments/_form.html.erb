@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :question %>
-    <%= form.text_field :question, id: :argument_question %>
+    <%= form.text_area :question, id: :argument_question, class: "form-control", rows: "2"  %>
   </div>
 
   <div class="field">
     <%= form.label :quickanswer %>
-    <%= form.text_field :quickanswer, id: :argument_quickanswer %>
+    <%= form.text_area :quickanswer, id: :argument_quickanswer , class: "form-control", rows: "3" %>
   </div>
 
   <div class="field">
