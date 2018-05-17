@@ -11,3 +11,6 @@ body {
   background-color: $jumbotron-bg;
 }
 
+.jumbotron-color {
+  color: $jumbotron-bg !important;
+}

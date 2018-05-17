@@ -12,7 +12,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <%= link_to root_path do %>
-        <div class="navbar-brand d-inline" style="color: greenyellow;">Veggie Database</div>
+        <div class="navbar-brand d-inline jumbotron-color">Veggie Database</div>
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "About Me", root_path, class:"nav-link", backgroundcolor: "darkgoldenrod" %>
+          <%= link_to "Contribute", root_path, class:"nav-link jumbotron-color"  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "API", root_path, class:"nav-link jumbotron-color"  %>
         </li>
       </ul>
 
