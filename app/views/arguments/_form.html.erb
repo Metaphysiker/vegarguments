@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :question %>
+    <h4>Question (e.g. <b>"Why not eat meat?"</b>)</h4>
     <%= form.text_area :question, id: :argument_question, class: "form-control", rows: "2"  %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :quickanswer %>
+    <h4>Short answer (e.g. <b>"Because the meat industry is cruel to animals.</b>)</h4>
     <%= form.text_area :quickanswer, id: :argument_quickanswer , class: "form-control", rows: "3" %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :longanswer %>
+    <h4>Long answer </h4>
     <%= form.text_area :longanswer, :class => "tinymce", :rows => 40, :cols => 120, id: :argument_longanswer %>
   </div>
 
