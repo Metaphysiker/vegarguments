@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :models
   root 'static_pages#welcome'
 
+  get '/adminpanel', to: 'arguments#adminpanel'
+
+  post "/arguments/publishargument/:id", to: 'arguments#publishargument', as: 'publish_argument'
+
   resources :arguments
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,10 +1,20 @@
 class ArgumentsController < ApplicationController
-  before_action :set_argument, only: [:show, :edit, :update, :destroy]
+  before_action :set_argument, only: [:publishargument, :show, :edit, :update, :destroy]
 
+  def adminpanel
+    @arguments = Argument.all
+  end
+
+  def publishargument
+
+    @argument.update(published: true)
+
+    redirect_to adminpanel_path
+  end
   # GET /arguments
   # GET /arguments.json
   def index
-    @arguments = Argument.all
+    @arguments = Argument.published
   end
 
   # GET /arguments/1

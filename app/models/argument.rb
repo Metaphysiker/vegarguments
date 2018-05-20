@@ -6,4 +6,6 @@ class Argument < ApplicationRecord
     slug.blank? || question_changed?
   end
 
+  scope :published, -> { where(published: true) }
+
 end
