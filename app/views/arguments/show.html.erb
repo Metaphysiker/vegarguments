@@ -15,3 +15,5 @@
 
 <%= link_to 'Edit', edit_argument_path(@argument) %> |
 <%= link_to 'Back', arguments_path %>
+
+<%= render partial: "diff", locals: {original: Argument.find(@argument.argument_id), suggestion: @argument} if @argument.argument_id %>
