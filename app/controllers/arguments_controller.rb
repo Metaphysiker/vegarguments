@@ -1,5 +1,5 @@
 class ArgumentsController < ApplicationController
-  before_action :set_argument, only: [:publishargument, :show, :edit, :update, :destroy]
+  before_action :set_argument, only: [:submitsuggestion, :publishargument, :show, :edit, :update, :destroy]
   before_action :allowed?, only: [:edit, :update, :destroy, :adminpanel]
 
   def adminpanel
@@ -8,6 +8,15 @@ class ArgumentsController < ApplicationController
 
   def submittranslation
 
+  end
+
+  def submitsuggestion
+    original = @argument
+    @argument = original.dup
+    @argument.kind = "suggestion"
+    @argument.argument_id = original.id
+
+    render "new"
   end
 
 
@@ -34,7 +43,7 @@ class ArgumentsController < ApplicationController
 
   # GET /arguments/new
   def new
-    @argument = Argument.new
+      @argument = Argument.new
   end
 
   # GET /arguments/1/edit

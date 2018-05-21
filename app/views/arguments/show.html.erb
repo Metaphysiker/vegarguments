@@ -11,8 +11,7 @@
     <%= sanitize @argument.longanswer, attributes: %w(style href) %>
   </p>
 </div>
-
-<%= link_to "Submit an improvment", new_argument_path(:kind => "suggestion", :argument_id => @argument.id) %>
+<%= link_to 'Submit suggestion', submit_suggestion_path(@argument), method: :post %>
 
 <%= link_to 'Edit', edit_argument_path(@argument) %> |
 <%= link_to 'Back', arguments_path %>
