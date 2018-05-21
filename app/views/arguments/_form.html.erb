@@ -16,6 +16,19 @@
     <%= form.text_area :question, id: :argument_question, class: "form-control", rows: "2"  %>
   </div>
 <br>
+
+    <div class="field">
+      <h4>Author (e.g. <b>"Peter Singer"</b>, <b>"Klaus Petrus"</b> or <b>"Anonymous"</b>).</h4>
+      <%= form.text_field :author, id: :argument_author, class: "form-control"  %>
+    </div>
+    <br>
+
+    <div class="field">
+      <h4>Language</h4>
+      <%= form.collection_select :language, Language.all, :abbreviation, :name, {}, {class: "form-control"} %>
+    </div>
+    <br>
+
   <div class="field">
     <h4>Short answer (e.g. <b>"Because the meat industry is cruel to animals.</b>)</h4>
     <%= form.text_area :quickanswer, id: :argument_quickanswer , class: "form-control", rows: "3" %>
