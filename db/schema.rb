@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180520223541) do
+ActiveRecord::Schema.define(version: 20180521075609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20180520223541) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.boolean "published", default: false
+    t.bigint "argument_id"
+    t.string "kind", default: "original"
+    t.string "language", default: "en"
+    t.index ["argument_id"], name: "index_arguments_on_argument_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -50,8 +54,10 @@ ActiveRecord::Schema.define(version: 20180520223541) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "arguments", "arguments"
 end

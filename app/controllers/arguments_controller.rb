@@ -1,13 +1,23 @@
 class ArgumentsController < ApplicationController
   before_action :set_argument, only: [:publishargument, :show, :edit, :update, :destroy]
+  before_action :allowed?, only: [:edit, :update, :destroy, :adminpanel]
 
   def adminpanel
     @arguments = Argument.all
   end
 
+  def submittranslation
+
+  end
+
+
   def publishargument
 
-    @argument.update(published: true)
+    if @argument.published == true
+      @argument.update(published: false)
+    else
+      @argument.update(published: true)
+    end
 
     redirect_to adminpanel_path
   end
@@ -72,6 +82,12 @@ class ArgumentsController < ApplicationController
   end
 
   private
+
+    def allowed?
+      if current_user.nil? || current_user.role != "admin"
+        redirect_to root_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_argument
       #@argument = Argument.find(params[:id])
@@ -80,6 +96,6 @@ class ArgumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def argument_params
-      params.require(:argument).permit(:title, :question, :quickanswer, :longanswer)
+      params.require(:argument).permit(:title, :question, :quickanswer, :longanswer, :kind)
     end
 end
