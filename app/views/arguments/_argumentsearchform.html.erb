@@ -1,0 +1,31 @@
+<%= form_tag(arguments_path, method: "get", remote: true, class: "form-group") do %>
+    <%= text_field_tag(:search, nil, placeholder: "Browse for arguments", autocomplete: :off, class: "form-control") %>
+    <%= submit_tag("Search", id: "triggersearch", class: "invisible") %>
+<% end %>
+
+
+<div id="argumentresults">
+  <%= render "searchresults" %>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+        $( "#search" ).keyup(function() {
+            $( "#argumentresults" ).html( "<div class=\"mx-auto loader\"></div>" );
+
+            $.ajax({
+                method: "POST",
+                headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+                url: "/arguments/search",
+                data: { search: $( "#search" ).val() }
+            }).done(function(result) {
+                $("#argumentresults").html(result);
+            });
+
+
+
+        });
+
+    });
+</script>

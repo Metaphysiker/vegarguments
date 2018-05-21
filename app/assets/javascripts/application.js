@@ -16,4 +16,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require tinymce
+//= require difflib
+//= require diffview
 //= require_tree .

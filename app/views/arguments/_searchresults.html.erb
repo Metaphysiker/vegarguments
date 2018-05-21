@@ -1,0 +1,10 @@
+<% @arguments || (@arguments = Argument.published) %>
+
+<% @arguments.all.each do |argument| %>
+
+  <div class="jumbotron jumbotron-bg">
+    <i><%= argument.question %></i>
+    <hr />
+    <%= argument.quickanswer %>
+  </div>
+<% end %>

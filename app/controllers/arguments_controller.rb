@@ -10,6 +10,21 @@ class ArgumentsController < ApplicationController
 
   end
 
+  def search
+    search = params[:search]
+
+    if search.nil? || search.empty?
+      @arguments = Argument.published
+    else
+      @arguments = Argument.published.where("question ILIKE ? OR quickanswer ILIKE ? OR longanswer ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+      #@pdfs = Pdf.search_title_file_name_url(search)
+    end
+
+    respond_to do |format|
+      format.html { render partial: "searchresults" }
+    end
+  end
+
   def submitsuggestion
     original = @argument
     @argument = original.dup
@@ -39,6 +54,7 @@ class ArgumentsController < ApplicationController
   # GET /arguments/1
   # GET /arguments/1.json
   def show
+    @title = @argument.question
   end
 
   # GET /arguments/new
