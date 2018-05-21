@@ -16,8 +16,9 @@ class ArgumentsController < ApplicationController
     if search.nil? || search.empty?
       @arguments = Argument.published
     else
-      @arguments = Argument.published.where("question ILIKE ? OR quickanswer ILIKE ? OR longanswer ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+      #@arguments = Argument.published.where("question ILIKE ? OR quickanswer ILIKE ? OR longanswer ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
       #@pdfs = Pdf.search_title_file_name_url(search)
+      @arguments = Argument.published.basic_argument_search_for(search)
     end
 
     respond_to do |format|
