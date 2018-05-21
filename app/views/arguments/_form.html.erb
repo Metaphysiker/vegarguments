@@ -26,8 +26,8 @@
     <%= form.text_area :longanswer, :class => "tinymce", :rows => 40, :cols => 120, id: :argument_longanswer %>
   </div>
 
-    <%= form.hidden_field :kind, :value => params[:requestval] %>
-    <%= form.hidden_field :argument_id, :value => params[:requestval] %>
+    <%= form.hidden_field :kind, :value => params[:kind] %>
+    <%= form.hidden_field :argument_id, :value => params[:argument_id] %>
 
     <div class="actions">
     <%= form.submit %>

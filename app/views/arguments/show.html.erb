@@ -12,7 +12,7 @@
   </p>
 </div>
 
-
+<%= link_to "Submit an improvment", new_argument_path(:kind => "suggestion", :argument_id => @argument.id) %>
 
 <%= link_to 'Edit', edit_argument_path(@argument) %> |
 <%= link_to 'Back', arguments_path %>
