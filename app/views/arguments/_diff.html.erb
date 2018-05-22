@@ -1,3 +1,5 @@
+<%= render partial: "diff", locals: {original: Argument.find(@argument.argument_id), suggestion: @argument} if @argument.argument_id && !current_user.nil? %>
+
 <div class="top d-none">
   <strong>Context size (optional):</strong> <input type="text" id="contextSize" value="" />
 </div>

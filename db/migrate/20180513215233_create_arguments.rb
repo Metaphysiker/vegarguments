@@ -1,9 +1,13 @@
 class CreateArguments < ActiveRecord::Migration[5.1]
   def change
     create_table :arguments do |t|
-      t.string :question
-      t.text :quickanswer
-      t.text :longanswer
+      t.text :argument
+      t.string :slug, unique: true
+      t.boolean :published, default: false
+      t.belongs_to :question, index: true
+      t.string :language, default: "en"
+      t.string :author, default: ""
+      t.string :urls, array:true, default: []
 
       t.timestamps
     end

@@ -1,0 +1,63 @@
+<div class="jumbotron jumbotron-bg">
+
+<%= simple_form_for(@argument) do |f| %>
+    <%= f.input :author %>
+    <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: "English" %>
+    <%= f.text_area :argument, :class => "tinymce", :rows => 20, :cols => 120, id: :argument_argument %>
+    <%= f.button :submit %>
+<% end %>
+
+</div>
+
+<div class="jumbotron jumbotron-bg">
+
+<%= form_with(model: argument, local: true) do |form| %>
+  <% if argument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(argument.errors.count, "error") %> prohibited this argument from being saved:</h2>
+
+      <ul>
+      <% argument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div class="field">
+      <h4>Author (e.g. <b>"Peter Singer"</b>, <b>"Klaus Petrus"</b> or <b>"Anonymous"</b>).</h4>
+      <%= form.text_field :author, id: :argument_author, class: "form-control"  %>
+    </div>
+    <br>
+
+    <div class="field">
+      <h4>Language</h4>
+      <%= form.collection_select :language, Language.all, :abbreviation, :name, {}, {class: "form-control"} %>
+    </div>
+    <br>
+
+  <div class="field">
+    <h4>Argument</h4>
+
+  </div>
+
+    <br>
+    <div class="field">
+      <h4>URLs, sources, further literature</h4>
+      <%= form.text_field :urls, multiple: true, class: "form-control" %>
+      <%= form.text_field :urls, multiple: true, class: "form-control"  %>
+      <%= form.text_field :urls, multiple: true, class: "form-control"  %>
+    </div>
+
+    <%= form.hidden_field :question_id, value: 1 %>
+
+    <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= tinymce %>
+
+</div>

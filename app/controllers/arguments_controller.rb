@@ -29,8 +29,6 @@ class ArgumentsController < ApplicationController
   def submitsuggestion
     original = @argument
     @argument = original.dup
-    @argument.kind = "suggestion"
-    @argument.argument_id = original.id
 
     render "new"
   end
@@ -55,7 +53,7 @@ class ArgumentsController < ApplicationController
   # GET /arguments/1
   # GET /arguments/1.json
   def show
-    @title = @argument.question
+    @title = @argument.argument
   end
 
   # GET /arguments/new
@@ -116,12 +114,12 @@ class ArgumentsController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_argument
-      #@argument = Argument.find(params[:id])
-      @argument = Argument.friendly.find(params[:id])
+      @argument = Argument.find(params[:id])
+      #@argument = Argument.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def argument_params
-      params.require(:argument).permit(:title, :question, :quickanswer, :longanswer, :kind, :argument_id, :author, :language, :urls => [])
+      params.require(:argument).permit(:argument, :question_id, :author, :language, :urls => [])
     end
 end

@@ -1,13 +1,10 @@
 class Argument < ApplicationRecord
   include PgSearch
 
-  extend FriendlyId
-  friendly_id :question, use: :slugged
-
-  has_many :arguments
+  belongs_to :question
 
   pg_search_scope :basic_argument_search_for,
-                  :against => [:question, :quickanswer, :longanswer],
+                  :against => [:argument],
                   using: { tsearch: { any_word: true, prefix: true } }
 
   scope :published, -> { where(published: true) }
