@@ -1,4 +1,5 @@
 class Argument < ApplicationRecord
+  before_save :fix_urls
   include PgSearch
 
   belongs_to :question
@@ -20,6 +21,13 @@ class Argument < ApplicationRecord
 
   def remove_url(url)
     update_attributes urls: urls - [ url ]
+  end
+
+
+  def fix_urls
+    unsavedurls = urls
+    self.urls = unsavedurls.reject { |c| c.empty? }
+
   end
 
 end

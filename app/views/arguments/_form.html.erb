@@ -18,7 +18,9 @@
     <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: "English" %>
     <%= f.text_area :argument, :class => "tinymce", :rows => 20, :cols => 120, id: :argument_argument %>
     <%= f.hidden_field :question_id, value: 1 %>
-    <%= f.input :urls, as: :array %>
+    <%= f.input :urls, input_html: { multiple: true } %>
+    <%= f.input :urls, input_html: { multiple: true } %>
+    <%= f.input :urls, input_html: { multiple: true } %>
     <%= f.button :submit %>
 <% end %>
 
