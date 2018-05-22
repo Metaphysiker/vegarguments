@@ -1,0 +1,5 @@
+<b>URLs, sources, further literature</b>
+<br>
+<% argument.urls.each do |url| %>
+    <%= link_to url, URI::HTTP.build({:host => url}).to_s, target: "_blank" %><br>
+<% end %>

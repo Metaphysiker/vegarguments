@@ -9,10 +9,9 @@
   <p>
     <%= sanitize @argument.longanswer, attributes: %w(style href) %>
   </p>
-</div>
-<%= link_to 'Submit suggestion', submit_suggestion_path(@argument), method: :post %>
 
-<%= link_to 'Edit', edit_argument_path(@argument) %> |
-<%= link_to 'Back', arguments_path %>
+  <%= render partial: "urls", locals: {argument: @argument} unless @argument.urls.empty? %>
+
+</div>
 
 <%= render partial: "diff", locals: {original: Argument.find(@argument.argument_id), suggestion: @argument} if @argument.argument_id && !current_user.nil? %>
