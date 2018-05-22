@@ -17,6 +17,12 @@ class Argument < ApplicationRecord
     slug.blank? || question_changed?
   end
 
+  def add_url(url)
+    update_attributes urls: urls + [ url ]
+  end
 
+  def remove_url(url)
+    update_attributes urls: urls - [ url ]
+  end
 
 end

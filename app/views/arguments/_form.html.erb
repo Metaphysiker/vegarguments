@@ -1,3 +1,5 @@
+<div class="jumbotron jumbotron-bg">
+
 <%= form_with(model: argument, local: true) do |form| %>
   <% if argument.errors.any? %>
     <div id="error_explanation">
@@ -11,8 +13,10 @@
     </div>
   <% end %>
 
+    <i>Fields marked by an "*" are necessary.</i>
+
   <div class="field">
-    <h4>Question (e.g. <b>"Why not eat meat?"</b>)</h4>
+    <h4>Question* (e.g. <b>"Why not eat meat?"</b>)</h4>
     <%= form.text_area :question, id: :argument_question, class: "form-control", rows: "2"  %>
   </div>
 <br>
@@ -30,14 +34,24 @@
     <br>
 
   <div class="field">
-    <h4>Short answer (e.g. <b>"Because the meat industry is cruel to animals.</b>)</h4>
-    <%= form.text_area :quickanswer, id: :argument_quickanswer , class: "form-control", rows: "3" %>
+    <h4>Short answer* (e.g. <b>"Because the meat industry is cruel to animals.</b>)</h4>
+    <%= form.text_area :quickanswer, id: :argument_quickanswer , class: "form-control", rows: "4" %>
   </div>
 <br>
   <div class="field">
     <h4>Long answer </h4>
     <%= form.text_area :longanswer, :class => "tinymce", :rows => 40, :cols => 120, id: :argument_longanswer %>
   </div>
+
+    <br>
+    <div class="field">
+      <h4>URLs, sources, further literature</h4>
+      <%= form.text_field :urls, multiple: true, class: "form-control" %>
+      <%= form.text_field :urls, multiple: true, class: "form-control"  %>
+      <%= form.text_field :urls, multiple: true, class: "form-control"  %>
+    </div>
+
+
 
     <%= form.hidden_field :kind %>
     <%= form.hidden_field :argument_id %>
@@ -49,3 +63,5 @@
 
 
 <%= tinymce %>
+
+</div>

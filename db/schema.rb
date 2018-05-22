@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521205349) do
+ActiveRecord::Schema.define(version: 20180522063902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180521205349) do
     t.string "kind", default: "original"
     t.string "language", default: "en"
     t.string "author", default: ""
+    t.string "urls", default: [], array: true
     t.index ["argument_id"], name: "index_arguments_on_argument_id"
   end
 
