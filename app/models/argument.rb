@@ -10,8 +10,4 @@ class Argument < ApplicationRecord
   scope :published, -> { where(published: true) }
 
 
-  def should_generate_new_friendly_id?
-    slug.blank? || question_changed?
-  end
-
 end

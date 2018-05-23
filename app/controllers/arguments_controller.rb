@@ -107,11 +107,6 @@ class ArgumentsController < ApplicationController
 
   private
 
-    def allowed?
-      if current_user.nil? || current_user.role != "admin"
-        redirect_to root_path
-      end
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_argument
       @argument = Argument.find(params[:id])
