@@ -5,6 +5,9 @@ class Question < ApplicationRecord
 
   has_many :arguments
 
+  include PgSearch
+  multisearchable :against => [:question]
+
 
   def should_generate_new_friendly_id?
     slug.blank? || question_changed?

@@ -4,10 +4,23 @@ class Argument < ApplicationRecord
   belongs_to :question
 
   pg_search_scope :basic_argument_search_for,
-                  :against => [:argument],
+                  :against => [:argument, :author],
                   using: { tsearch: { any_word: true, prefix: true } }
+
+
+  include PgSearch
+
+  multisearchable :against => [:argument, :author],
+                  :if => lambda { |record| record.published == true }
 
   scope :published, -> { where(published: true) }
 
+  def question
+    parent.question
+  end
+
+  def parent
+    Question.find(self.question_id)
+  end
 
 end

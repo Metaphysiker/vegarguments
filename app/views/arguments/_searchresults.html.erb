@@ -1,10 +1,21 @@
-<% @arguments || (@arguments = Argument.published) %>
+<% if @arguments.nil? %>
+    No results found!
+<% elsif @arguments.empty? %>
+    No results found!
+<% else %>
 
-<% @arguments.all.each do |argument| %>
+    <% @arguments.each do |result| %>
 
-  <div class="jumbotron jumbotron-bg">
-    <i><b><%= argument.question %></b></i>
-    <hr />
-    <%= argument.quickanswer %>
-  </div>
+        <% if result.searchable_type == "Argument" %>
+          <% argument = Argument.find(result.searchable_id) %>
+          <%= argument.question %>
+          <%= argument.argument %>
+
+          <% elsif result.searchable_type == "Question" %>
+            <% question = Question.find(result.searchable_id) %>
+            <%= question.question %>
+            <%= question.arguments.first.argument %>
+        <% end %>
+
+    <% end %>
 <% end %>
