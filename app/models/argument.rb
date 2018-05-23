@@ -1,5 +1,4 @@
 class Argument < ApplicationRecord
-  before_save :fix_urls
   include PgSearch
 
   belongs_to :question
@@ -13,21 +12,6 @@ class Argument < ApplicationRecord
 
   def should_generate_new_friendly_id?
     slug.blank? || question_changed?
-  end
-
-  def add_url(url)
-    update_attributes urls: urls + [ url ]
-  end
-
-  def remove_url(url)
-    update_attributes urls: urls - [ url ]
-  end
-
-
-  def fix_urls
-    unsavedurls = urls
-    self.urls = unsavedurls.reject { |c| c.empty? }
-
   end
 
 end

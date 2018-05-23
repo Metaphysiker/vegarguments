@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="jumbotron jumbotron-bg text-justify">
+  <i>
+    <%= Question.find(@argument.question_id).question %>
+  </i>
+
+  <hr />
 
   <p>
     <%= sanitize @argument.argument, attributes: %w(style href) %>
   </p>
 
-  <%=  render partial: "urls", locals: {argument: @argument} unless @argument.urls.empty? %>
+  <%=  render partial: "url", locals: {argument: @argument} unless @argument.url.blank? %>
 
 </div>
 

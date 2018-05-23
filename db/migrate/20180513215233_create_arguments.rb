@@ -7,7 +7,7 @@ class CreateArguments < ActiveRecord::Migration[5.1]
       t.belongs_to :question, index: true
       t.string :language, default: "en"
       t.string :author, default: ""
-      t.string :urls, array:true, default: []
+      t.string :url, default: ""
 
       t.timestamps
     end

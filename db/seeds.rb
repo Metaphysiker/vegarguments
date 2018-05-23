@@ -10,4 +10,6 @@ Language.create(name: "Deutsch", abbreviation: "de")
 
 Language.create(name: "English", abbreviation: "en")
 
+Language.create(name: "Francais", abbreviation: "fr")
+
 Question.create(question: "First")

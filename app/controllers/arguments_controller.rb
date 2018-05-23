@@ -120,6 +120,6 @@ class ArgumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def argument_params
-      params.require(:argument).permit(:argument, :question_id, :author, :language, :urls => [])
+      params.require(:argument).permit(:argument, :question_id, :author, :language, :url)
     end
 end

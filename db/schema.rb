@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180522200657) do
     t.bigint "question_id"
     t.string "language", default: "en"
     t.string "author", default: ""
-    t.string "urls", default: [], array: true
+    t.string "url", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_arguments_on_question_id"
