@@ -15,7 +15,8 @@ class ArgumentsController < ApplicationController
 
     if search.nil? || search.empty?
       #@arguments = Argument.published
-      @results = nil
+      @questions = Question.all
+      @arguments = Argument.none
     else
       #@arguments = Argument.published.where("question ILIKE ? OR quickanswer ILIKE ? OR longanswer ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
       #@pdfs = Pdf.search_title_file_name_url(search)
@@ -130,6 +131,6 @@ class ArgumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def argument_params
-      params.require(:argument).permit(:argument, :question_id, :author, :language, :url)
+      params.require(:argument).permit(:argument, :title, :question_id, :author, :language, :url)
     end
 end

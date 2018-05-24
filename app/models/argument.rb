@@ -10,7 +10,7 @@ class Argument < ApplicationRecord
 
   include PgSearch
 
-  multisearchable :against => [:argument, :author],
+  multisearchable :against => [:argument, :title, :author],
                   :if => lambda { |record| record.published == true }
 
   scope :published, -> { where(published: true) }

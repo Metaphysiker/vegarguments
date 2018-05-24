@@ -20,10 +20,10 @@
             </ul>
           </div>
       <% end %>
-
+    <%= f.input :title %>
     <%= f.text_area :argument, :class => "tinymce", :rows => 15, :cols => 120, id: :argument_argument %>
     <%= f.input :author %>
-    <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: :English %>
+    <%= f.input :language, collection: Language.all, value_method: :abbreviation, :selected => 'English' %>
     <%= f.hidden_field :question_id, value: question_id %>
     <%= f.input :url, label: 'URL (Source or Inspiration of argument)' %>
     <%= f.button :submit %>
