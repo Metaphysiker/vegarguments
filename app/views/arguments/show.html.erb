@@ -7,11 +7,6 @@
 
   <hr />
 
-  <b><%= @argument.author %></b>
-
-  <%=  render partial: "sanitizedargument", locals: {argument: @argument} %>
-
-  <%=  render partial: "url", locals: {argument: @argument} unless @argument.url.blank? %>
+    <%=  render partial: "arguments/argument", locals: {argument: @argument} %>
 
 </div>
-

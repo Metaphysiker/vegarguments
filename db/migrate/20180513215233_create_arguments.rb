@@ -8,6 +8,7 @@ class CreateArguments < ActiveRecord::Migration[5.1]
       t.string :language, default: "en"
       t.string :author, default: ""
       t.string :url, default: ""
+      t.string :title, default: ""
 
       t.timestamps
     end

@@ -1,8 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<i>
-  <%= @question.question %>
-</i>
-<br>
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%=  render partial: "arguments/questionshowcase", locals: {question: @question, arguments: @question.arguments } %>

@@ -1,0 +1,32 @@
+
+        <div class="jumbotron jumbotron-bg">
+          <p>
+            <i><b><%= link_to question.question, question_path(question) %></b></i>
+          </p>
+
+          <p>
+          <% if !arguments.empty? %>
+
+              <hr />
+            <% arguments.each do |argument| %>
+
+              <%=  render partial: "arguments/argument", locals: {argument: argument} %>
+            <% end %>
+
+         <% end %>
+          </p>
+
+          <p>
+
+            <% if question.arguments.empty? %>
+
+              <i>No arguments are yet available. Add one here: <%= link_to "Create argument", new_argument_path(question: question.id) %></i>
+              <% elsif question.arguments.count != arguments.count %>
+          
+              <i>
+                See all arguments here: <%= link_to question.question, question_path(question) %>
+              </i>
+
+          <% end %>
+            </p>
+        </div>

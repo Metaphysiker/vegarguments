@@ -21,6 +21,7 @@
           </div>
       <% end %>
     <%= f.input :title %>
+    <%= f.label :argument, 'Argument' %>
     <%= f.text_area :argument, :class => "tinymce", :rows => 15, :cols => 120, id: :argument_argument %>
     <%= f.input :author %>
     <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: "en" %>

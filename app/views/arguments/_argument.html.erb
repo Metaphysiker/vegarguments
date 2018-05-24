@@ -1,0 +1,9 @@
+<p>
+  <i><b><%= argument.title %></b></i>
+</p>
+      <%=  render partial: "arguments/sanitizedargument", locals: {argument: argument} %>
+
+      <%=  render partial: "arguments/author", locals: {argument: argument} unless argument.author.blank? %>
+
+      <%=  render partial: "arguments/url", locals: {argument: argument} unless argument.url.blank? %>
+  <hr />

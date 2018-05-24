@@ -5,7 +5,10 @@
 
   <div class="form-inputs">
     <%= f.input :question, as: :text%>
+    <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: "en" %>
   </div>
+
+
 
   <div class="form-actions">
     <%= f.button :submit %>
