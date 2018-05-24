@@ -67,7 +67,7 @@ class ArgumentsController < ApplicationController
   # GET /arguments/1
   # GET /arguments/1.json
   def show
-    @title = @argument.argument
+    @title = @argument.title
   end
 
   # GET /arguments/new

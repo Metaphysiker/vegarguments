@@ -2,7 +2,7 @@
     <h2>
       Let's be better to animals.
     </h2>
-    <%= link_to "Question 1", new_argument_path(question: 1) %>
+    <hr />
     <p>
       This is a database of arguments that aim to improve animal welfare.
     </p>
@@ -22,8 +22,29 @@
     </p>
   https://www.srf.ch/kultur/gesellschaft-religion/das-tier-und-wir/tierisch-gute-argumente-gegen-den-fleischkonsum
 
+  <hr />
     <h3>Contribute</h3>
-
+    <p>
+      You can contribute to this database in several ways.
+      <ul>
+        <li>
+          You can add new questions: <%= link_to "Submit new question", new_question_path, class: "btn btn-sm btn-success" %>
+          <br>
+          Please make sure that a similar question does not already exist.
+        </li>
+        <li>
+          You can submit new arguments to questions.<br>
+          Here you can see all questions that don't have any arguments yet: LINK
+          <br>
+        </li>
+        <li>
+          Translate existing questions and answers into new languages.
+        </li>
+        <li>
+          Give feedback: Design bad? Missing features?
+        </li>
+      </ul>
+    </p>
   <%= link_to "You can submit your own questions and arguments", new_argument_path %>
 
   <p>

@@ -1,5 +1,5 @@
 <p>
-  <i><b><%= argument.title %></b></i>
+  <b><%= link_to argument.title, argument_path(argument) %></b>
 </p>
       <%=  render partial: "arguments/sanitizedargument", locals: {argument: argument} %>
 
