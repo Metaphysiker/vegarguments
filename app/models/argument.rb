@@ -1,9 +1,9 @@
 class Argument < ApplicationRecord
   include PgSearch
 
-  belongs_to :question
+  belongs_to :question, optional: true
 
-  pg_search_scope :basic_argument_search_for,
+  pg_search_scope :basic_search_for,
                   :against => [:argument, :author],
                   using: { tsearch: { any_word: true, prefix: true } }
 

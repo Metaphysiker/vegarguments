@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :questions
+  resources :arguments
+
   devise_for :users
   devise_for :models
   root 'static_pages#welcome'
@@ -11,6 +13,6 @@ Rails.application.routes.draw do
   post "/arguments/submitsuggestion/:id", to: 'arguments#submitsuggestion', as: 'submit_suggestion'
 
   post "/arguments/search", to: 'arguments#search'
-  resources :arguments
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

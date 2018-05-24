@@ -1,7 +1,8 @@
 <div class="jumbotron jumbotron-bg">
 
   <i>
-    <%= Question.find(params[:question]).question %>
+    <% question_id = @argument.question_id || @question %>
+    <%= Question.find(question_id).question %>
   </i>
 
   <hr />
@@ -20,10 +21,10 @@
           </div>
       <% end %>
 
+    <%= f.text_area :argument, :class => "tinymce", :rows => 15, :cols => 120, id: :argument_argument %>
     <%= f.input :author %>
     <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: :English %>
-    <%= f.text_area :argument, :class => "tinymce", :rows => 15, :cols => 120, id: :argument_argument %>
-    <%= f.hidden_field :question_id, value: params[:question] %>
+    <%= f.hidden_field :question_id, value: question_id %>
     <%= f.input :url, label: 'URL (Source or Inspiration of argument)' %>
     <%= f.button :submit %>
 <% end %>

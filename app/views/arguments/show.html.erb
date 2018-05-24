@@ -9,9 +9,7 @@
 
   <b><%= @argument.author %></b>
 
-  <p>
-    <%= sanitize @argument.argument, attributes: %w(style href) %>
-  </p>
+  <%=  render partial: "sanitizedargument", locals: {argument: @argument} %>
 
   <%=  render partial: "url", locals: {argument: @argument} unless @argument.url.blank? %>
 

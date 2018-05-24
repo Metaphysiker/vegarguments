@@ -1,21 +1,30 @@
-<% if @arguments.nil? %>
-    No results found!
-<% elsif @arguments.empty? %>
-    No results found!
+<% if @questions.nil? %>
+    <div  class="jumbotron jumbotron-bg">
+      No results found!
+    </div>
+<% elsif @questions.empty? %>
+    <div  class="jumbotron jumbotron-bg">
+      No results found!
+    </div>
 <% else %>
 
-    <% @arguments.each do |result| %>
+    <% @questions.each do |question| %>
 
-        <% if result.searchable_type == "Argument" %>
-          <% argument = Argument.find(result.searchable_id) %>
-          <%= argument.question %>
-          <%= argument.argument %>
+        <div class="jumbotron jumbotron-bg">
+          <i><b><%= question.question %></b></i>
 
-          <% elsif result.searchable_type == "Question" %>
-            <% question = Question.find(result.searchable_id) %>
-            <%= question.question %>
-            <%= question.arguments.first.argument %>
-        <% end %>
+          <% arguments = @arguments.where(question_id: question.id) %>
+          <% if !arguments.empty? %>
+              <hr />
+            <% arguments.each do |argument| %>
+                  <%=  render partial: "sanitizedargument", locals: {argument: argument} %>
+                <br>
+                <%= argument.author %>
+                <hr />
+            <% end %>
+         <% end %>
+        </div>
 
     <% end %>
+
 <% end %>

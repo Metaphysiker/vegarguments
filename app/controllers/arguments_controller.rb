@@ -15,12 +15,21 @@ class ArgumentsController < ApplicationController
 
     if search.nil? || search.empty?
       #@arguments = Argument.published
-      @arguments = nil
+      @results = nil
     else
       #@arguments = Argument.published.where("question ILIKE ? OR quickanswer ILIKE ? OR longanswer ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
       #@pdfs = Pdf.search_title_file_name_url(search)
       #@arguments = Argument.published.basic_argument_search_for(search)
-      @arguments = PgSearch.multisearch(search)
+      #results = PgSearch.multisearch(search)
+      #arguments = results.where(searchable_type: "Argument")
+      #questions = results.where(searchable_type: "Question")
+      #arguments_ids = arguments
+      questions = Question.basic_search_for(search)
+      @arguments = Argument.published.basic_search_for(search)
+
+      questions = questions + Question.find(@arguments.pluck(:question_id).uniq)
+      @questions = questions.uniq
+
     end
 
     respond_to do |format|
@@ -50,7 +59,8 @@ class ArgumentsController < ApplicationController
   # GET /arguments.json
   def index
     #@arguments = Argument.published
-    @arguments = PgSearch::Document.all
+    @questions = Question.all
+    @arguments = Argument.none
   end
 
   # GET /arguments/1
@@ -62,6 +72,8 @@ class ArgumentsController < ApplicationController
   # GET /arguments/new
   def new
       @argument = Argument.new
+      @question = params[:question]
+    logger.debug @question
   end
 
   # GET /arguments/1/edit
