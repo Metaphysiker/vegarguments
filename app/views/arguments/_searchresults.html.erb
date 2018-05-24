@@ -11,18 +11,36 @@
     <% @questions.each do |question| %>
 
         <div class="jumbotron jumbotron-bg">
-          <i><b><%= question.question %></b></i>
+          <p>
+            <i><b><%= question.question %></b></i>
+          </p>
 
+          <p>
           <% arguments = @arguments.where(question_id: question.id) %>
           <% if !arguments.empty? %>
+
               <hr />
             <% arguments.each do |argument| %>
                   <%=  render partial: "sanitizedargument", locals: {argument: argument} %>
                 <br>
                 <%= argument.author %>
-                <hr />
             <% end %>
          <% end %>
+          </p>
+
+          <p>
+
+            <% if question.arguments.empty? %>
+              <hr />
+              <i>No arguments are yet available. Add one here: <%= link_to "Create argument", new_argument_path(question: question.id) %></i>
+              <% else %>
+              <hr />
+              <i>
+                See all arguments here: <%= link_to question.question, question_path(question) %>
+              </i>
+
+          <% end %>
+            </p>
         </div>
 
     <% end %>
