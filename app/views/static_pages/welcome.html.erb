@@ -23,7 +23,10 @@
               </li>
               <li>
                 <b>Download the current database in different formats.</b>
-                 <br> <%= link_to "Download CSV", arguments_path, class: "btn btn-sm btn-success" %>
+                 <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-sm btn-success" %>
+                 <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-sm btn-success" %>
+                 <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-sm btn-success" %>
+
               </li>
               <li>
                 <b>Access this database via API.</b> <br>

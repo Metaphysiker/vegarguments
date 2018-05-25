@@ -1,0 +1,30 @@
+<% @questions.each do |question| %>
+<p class="text-center">
+  <i><%= link_to question.question, question_path(question) %></i>
+</p>
+
+<hr />
+
+  <% question.arguments.each do |argument| %>
+  <p class="text-center">
+    <b><%= link_to argument.title, argument_path(argument) %></b>
+  </p>
+
+      <%=  render partial: "arguments/sanitizedargument", locals: {argument: argument} %>
+
+  <hr />
+        <%=  render partial: "arguments/author", locals: {argument: argument} unless argument.author.blank? %>
+
+        <%=  render partial: "arguments/url", locals: {argument: argument} unless argument.url.blank? %>
+        <br>
+        <p>
+          <b>Link: </b>
+          <u>  <a href="<%= argument.hyperlink %>"><%= argument.hyperlink %></a></u>
+      </p>
+<hr />
+<div class="m-4">
+  &nbsp;
+</div>
+  <% end %>
+
+<% end %>

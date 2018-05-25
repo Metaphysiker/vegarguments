@@ -38,6 +38,14 @@ class Argument < ApplicationRecord
     Question.find(self.question_id)
   end
 
+  def hyperlink
+    Rails.configuration.host.to_s + "arguments/" + slug
+  end
+
+  def length
+    clean_argument.length
+  end
+
   def self.to_csv
   attributes = %w{question title clean_argument author}
 

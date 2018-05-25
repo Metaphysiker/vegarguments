@@ -69,6 +69,13 @@ class ArgumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data Argument.all.to_csv, filename: "arguments-#{Date.today}.csv" }
+      format.json
+      format.pdf do
+        @arguments = Argument.all
+        render pdf: "arguments-#{Date.today}.csv",
+        template: "arguments/pdf.html.erb",
+        layout: 'pdf.html'
+      end
     end
 
   end
