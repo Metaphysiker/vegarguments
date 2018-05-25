@@ -18,4 +18,7 @@
 //= require tinymce
 //= require difflib
 //= require diffview
+//= require ahoy
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
