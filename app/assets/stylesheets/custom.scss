@@ -39,6 +39,24 @@ body {
   color: greenyellow;
 }
 
+.argumenttitle {
+  font-weight: bold;
+  //text-decoration: underline;
+//  background-color: GreenYellow;
+}
+
+.greyish-bg{
+  background-color: #E9ECEF
+}
+
+.underlinelinks {
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 a {
-  color: darkblue;
+  color: black;
+  //text-decoration: underline;
 }

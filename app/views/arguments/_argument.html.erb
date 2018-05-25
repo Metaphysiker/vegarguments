@@ -1,9 +1,13 @@
+<div class="rounded p-3 mb-3 jumbotron-bg">
+
 <p>
-  <b><%= link_to argument.title, argument_path(argument) %></b>
+  <div class="argumenttitle text-center rounded p-1"><%= link_to argument.title, argument_path(argument) %></div>
 </p>
+<hr />
       <%=  render partial: "arguments/sanitizedargument", locals: {argument: argument} %>
 
+<hr />
       <%=  render partial: "arguments/author", locals: {argument: argument} unless argument.author.blank? %>
 
       <%=  render partial: "arguments/url", locals: {argument: argument} unless argument.url.blank? %>
-  <hr />
+</div>

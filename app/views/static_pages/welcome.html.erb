@@ -12,22 +12,35 @@
         <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(id: Question.first.arguments.first.id), show: false } %>
 
         <hr />
-          <h3>Use this database!</h3>
+          <div class="rounded greyish-bg p-4 mb-1">
+            <h3>Use this database!</h3>
+            <hr />
           <p>
-            You can browse for existing questions and arguments here: <%= link_to "Browse", arguments_path, class: "btn btn-sm btn-success" %>
+            <ul style="line-height: 3;">
+              <li>
+                <b>Browse questions and arguments.</b> <br>
+                 <%= link_to "Browse", arguments_path, class: "btn btn-sm btn-success" %>
+              </li>
+              <li>
+                <b>Download the current database in different formats.</b>
+                 <br> <%= link_to "Download CSV", arguments_path, class: "btn btn-sm btn-success" %>
+              </li>
+              <li>
+                <b>Access this database via API.</b> <br>
+                <%= link_to "How to use the API", arguments_path, class: "btn btn-sm btn-success" %>
+              </li>
+              <li>
+                  <b>Embed or share questions and arguments via Social Media.</b><br>
+                   <%= link_to "Share", arguments_path, class: "btn btn-sm btn-success" %>
+              </li>
+            </ul>
           </p>
-          <p>
-            You can download the current database as csv-file here: <%= link_to "Download database", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
-          <p>
-            You can access this database via API. Take a look here: <%= link_to "How to use the API", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
-          <p>
-            You can embed or share questions and arguments via Social Media here: <%= link_to "Share", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
+        </div>
 
   <hr />
-    <h3>Contribute!</h3>
+    <div class="rounded greyish-bg p-4 mb-1">
+        <h3>Contribute!</h3>
+        <hr />
     <p>
       You can contribute to this database in several ways.
       <ul style="line-height: 3;">
@@ -52,36 +65,6 @@
         </li>
       </ul>
     </p>
-
-<hr />
-  <p>
-  <h3>
-    Guidelines
-  </h3>
-  Let's face it. Most people don't give a shit about animal suffering.
-  If we want them to care about animal suffering, we have to give them good reasons.
-  </p>
-  <p>
-    There are also different kinds of people and therefore different kinds of reasons or arguments that appeal to them.
-  </p>
-  <p>
-    But I don't think that any kind of reason that may motivate some people to care about animal suffering is automatically a good one.
-  </p>
-  <p>
-    For example, arguments like "Killing animals will have a bad effect on your Karma!"
-    or "According to the indians, cows are holy! So don't eat them!"
-    may motivate some people to care about animals, but I'm not very comfortable with these kinds of arguments.
-  </p>
-  <p>
-    For one thing, these arguments are not about animals but rather about something different, namely religion or self-interest.
-    But I think that we should treat animals well, not because some of them are holy or because it is in our own interest to do so, but because <b>suffering is bad</b> and <b>we shouldn't cause suffering unnecessarily</b>.
-  </p>
-  <p>
-    That being said, I think we should avoid making arguments that have the potential to "backfire".
-    For instance, the "Cows are holy"-example seems to imply that some animals aren't holy.
-    And the undesirable effect will be that some people may care about cows but not about other animals.
-
-  </p>
-
+</div>
 
 </div>
