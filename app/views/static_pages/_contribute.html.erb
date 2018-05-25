@@ -1,0 +1,28 @@
+<div class="rounded greyish-bg p-4 mb-1">
+    <h3 class="text-center">Contribute!</h3>
+    <hr />
+<p>
+  You can contribute to this database in several ways.
+  <ul style="line-height: 3;">
+    <li>
+      <b>Submit new questions</b>. (Please make sure that a similar question does not already exist).
+      <br>
+      <%= link_to "Submit a new question", new_question_path, class: "btn btn-success btn-lg multilinebutton" %>
+    </li>
+    <li>
+      <b>Submit new arguments to questions.</b>
+      <br>
+        <%= link_to "Show questions with no or few arguments", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+      <br>
+    </li>
+    <li>
+      <b>Translate existing questions and answers into new languages.</b>
+    </li>
+    <li>
+      <b>Give feedback.</b> Bad design? Missing features? Missing language? Suggestion for improvements?
+      <br>
+      <%= link_to "Give feedback", contact_path, class: "btn btn-success btn-lg multilinebutton" %>
+    </li>
+  </ul>
+</p>
+</div>

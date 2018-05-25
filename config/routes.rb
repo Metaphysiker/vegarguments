@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post "/arguments/search", to: 'arguments#search'
 
   get '/visits', to: 'static_pages#visits'
+  get '/contact', to: 'static_pages#contact', as: 'contact'
+  get '/contribute', to: 'static_pages#contribute', as: 'contribute'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

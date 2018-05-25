@@ -1,0 +1,53 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-12 text-justify">
+      <h1 class="text-center">
+        Contact
+      </h1>
+      <hr />
+    </div>
+    <div class="col-12 text-center mb-5 animated-divs">
+      <p>
+        Bad design? Missing features? Missing languages? Suggestions for improvements? Any cool ideas? Or just wanna chat?
+      </p>
+      <button type="button" data-target="contact0" class="btn btn-success btn-lg btn-block multilinebutton">Give Feedback!</button>
+      <div id="contact0" class="hiddenfromstart  text-center d-none m-5">
+        <p>
+          <b>Mail: </b><a href="mailto:sandro.raess@philosophie.ch">sandro.raess_at_philosophie.ch</a><br>
+          <b>Skype: </b>crystal-metal<br>
+        </p>
+      </div>
+      <hr />
+    </div>
+</div>
+</div>
+
+<script>
+
+    $( document ).ready(function() {
+
+        $(".btn").click(function(){
+            console.log($(this).attr( "data-target" ));
+            toggleButton($("#" + $(this).attr( "data-target" )));
+            ahoy.track("hire: " + $(this).attr( "data-target" ), {language: "JavaScript"});
+        });
+
+        function toggleButton(div) {
+                if (div.hasClass("d-none")){
+                    div.removeClass("animated zoomOut");
+                    div.removeClass("d-none").addClass("animated fadeIn");
+                    $('html, body').animate({
+                        scrollTop:div.offset().top
+                    },'slow');
+                } else {
+                    div.removeClass("animated fadeIn");
+                    div.addClass("animated zoomOut").delay(500).queue(function(){
+                        div.addClass("d-none").dequeue();
+                    });
+                }
+        }
+    });
+
+
+
+</script>

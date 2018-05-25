@@ -1,0 +1,29 @@
+<div class="rounded greyish-bg p-4 mb-1">
+  <h3 class="text-center">Use this database!</h3>
+  <hr />
+<p>
+  <ul style="line-height: 3;">
+    <li>
+      <b>Browse questions and arguments.</b> <br>
+       <%= link_to "Browse", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+    </li>
+    <li>
+      <b>Download the current database in different formats.</b>
+       <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-success btn-lg multilinebutton mb-2" %>
+       <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-success btn-lg multilinebutton mb-2" %>
+       <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-success btn-lg multilinebutton mb-2" %>
+
+    </li>
+    <li>
+      <b>Access this database via API.</b> <br>
+      <%= link_to "How to use the API", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+    </li>
+    <li>
+        <b>Embed or share questions and arguments via Social Media.</b><br>
+         <%= link_to "Share", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+    </li>
+  </ul>
+</p>
+</div>
+
+<hr />
