@@ -1,5 +1,7 @@
 class Argument < ApplicationRecord
 
+  require 'csv'
+
   validates :argument, presence: true
 
    before_save :sanitize_url
@@ -28,8 +30,23 @@ class Argument < ApplicationRecord
     parent.question
   end
 
+  def clean_argument
+    ActionController::Base.helpers.strip_tags(argument)
+  end
+
   def parent
     Question.find(self.question_id)
+  end
+
+  def self.to_csv
+  attributes = %w{question title clean_argument author}
+
+    CSV.generate(headers: true) do |csv|
+    csv << attributes
+      all.each do |argument|
+        csv << attributes.map{ |attr| argument.send(attr) }
+      end
+    end
   end
 
   private

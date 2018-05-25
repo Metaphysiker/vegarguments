@@ -65,6 +65,12 @@ class ArgumentsController < ApplicationController
     #@arguments = Argument.published
     @questions = Question.all
     @arguments = Argument.none
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Argument.all.to_csv, filename: "arguments-#{Date.today}.csv" }
+    end
+
   end
 
   # GET /arguments/1
