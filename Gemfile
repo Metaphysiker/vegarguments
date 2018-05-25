@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'ahoy_matey'
 gem 'seed_dump'
 gem 'simple_form'
 gem 'pg_search'

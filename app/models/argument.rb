@@ -34,7 +34,9 @@ class Argument < ApplicationRecord
 
   private
   def sanitize_url
-    self.url = "http://#{self.url}" unless self.url =~ /^https?:\/\//
+    if !self.url.blank?
+      self.url = "http://#{self.url}" unless self.url =~ /^https?:\/\//
+    end
   end
 
 end

@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<% question = Question.find(@argument.question_id) %>
 
-<div class="jumbotron jumbotron-bg text-justify">
+<div class="jumbotron">
   <i>
-    <%= link_to question.question, question_path(question) %>
+    <%= link_to @argument.parent.question, question_path(@argument.parent) %>
   </i>
 
   <hr />

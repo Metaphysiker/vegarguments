@@ -9,7 +9,7 @@
     <p>
       Here is a short example:
     </p>
-        <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(question_id: Question.first.arguments.first.id), show: false } %>
+        <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(id: Question.first.arguments.first.id), show: false } %>
 
         <hr />
           <h3>Use this database!</h3>
@@ -30,31 +30,28 @@
     <h3>Contribute!</h3>
     <p>
       You can contribute to this database in several ways.
-      <ul>
+      <ul style="line-height: 3;">
         <li>
-          You can add new questions: <%= link_to "Submit new question", new_question_path, class: "btn btn-sm btn-success" %>
+          <b>You can submit new questions</b>. (Please make sure that a similar question does not already exist).
           <br>
-          Please make sure that a similar question does not already exist.
+          <%= link_to "Submit a new question", new_question_path, class: "btn btn-sm btn-success" %>
         </li>
         <li>
-          You can submit new arguments to questions.<br>
-          Here you can see all questions that don't have any arguments yet: LINK
+          <b>You can submit new arguments to questions.</b>
+          <br>
+            <%= link_to "Show questions with no or few arguments", arguments_path, class: "btn btn-sm btn-success" %>
           <br>
         </li>
         <li>
-          Translate existing questions and answers into new languages.
+          <b>You can translate existing questions and answers into new languages.</b>
         </li>
         <li>
-          Give feedback: Design bad? Missing features?
+          <b>You can give feedback.</b> Bad design? Missing features? Missing language? Suggestion for improvements?
+          <br>
+          <%= link_to "Give feedback", new_question_path, class: "btn btn-sm btn-success" %>
         </li>
       </ul>
     </p>
-  <%= link_to "You can submit your own questions and arguments", new_argument_path %>
-
-  <p>
-    You can submit your own questions and arguments.
-    Go to "Submit" and enter your suggestion or suggest a better answer to an existing question.
-  </p>
 
 <hr />
   <p>
