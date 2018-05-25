@@ -19,22 +19,22 @@
             <ul style="line-height: 3;">
               <li>
                 <b>Browse questions and arguments.</b> <br>
-                 <%= link_to "Browse", arguments_path, class: "btn btn-sm btn-success" %>
+                 <%= link_to "Browse", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
               </li>
               <li>
                 <b>Download the current database in different formats.</b>
-                 <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-sm btn-success" %>
-                 <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-sm btn-success" %>
-                 <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-sm btn-success" %>
+                 <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-success btn-lg multilinebutton mb-2" %>
+                 <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-success btn-lg multilinebutton mb-2" %>
+                 <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-success btn-lg multilinebutton mb-2" %>
 
               </li>
               <li>
                 <b>Access this database via API.</b> <br>
-                <%= link_to "How to use the API", arguments_path, class: "btn btn-sm btn-success" %>
+                <%= link_to "How to use the API", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
               </li>
               <li>
                   <b>Embed or share questions and arguments via Social Media.</b><br>
-                   <%= link_to "Share", arguments_path, class: "btn btn-sm btn-success" %>
+                   <%= link_to "Share", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
               </li>
             </ul>
           </p>
@@ -50,12 +50,12 @@
         <li>
           <b>You can submit new questions</b>. (Please make sure that a similar question does not already exist).
           <br>
-          <%= link_to "Submit a new question", new_question_path, class: "btn btn-sm btn-success" %>
+          <%= link_to "Submit a new question", new_question_path, class: "btn btn-success btn-lg multilinebutton" %>
         </li>
         <li>
           <b>You can submit new arguments to questions.</b>
           <br>
-            <%= link_to "Show questions with no or few arguments", arguments_path, class: "btn btn-sm btn-success" %>
+            <%= link_to "Show questions with no or few arguments", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
           <br>
         </li>
         <li>
@@ -64,7 +64,7 @@
         <li>
           <b>You can give feedback.</b> Bad design? Missing features? Missing language? Suggestion for improvements?
           <br>
-          <%= link_to "Give feedback", new_question_path, class: "btn btn-sm btn-success" %>
+          <%= link_to "Give feedback", new_question_path, class: "btn btn-success btn-lg multilinebutton" %>
         </li>
       </ul>
     </p>
