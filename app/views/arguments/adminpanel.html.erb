@@ -1,20 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Arguments</h1>
+<h1>Unpublished Arguments</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th>Question</th>
-    <th>Answer</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+<div class="jumbotron">
+  <table class="table table-striped">
+
+    <tbody>
+    <% @unpublishedarguments.each do |argument| %>
+        <tr>
+          <td><%= argument.title %></td>
+          <td><%= link_to 'Show', argument %></td>
+          <td><%= link_to 'Edit', edit_argument_path(argument) %></td>
+          <td><%= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= argument.published %> <%= link_to 'Publish', publish_argument_path(argument), method: :post %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+<h1>Unpublished Questions: </h1>
+  <table class="table table-striped">
+
+    <tbody>
+    <% @unpublishedquestions.each do |argument| %>
+        <tr>
+          <td><%= argument.question %></td>
+          <td><%= link_to 'Show', argument %></td>
+          <td><%= link_to 'Edit', edit_question_path(argument) %></td>
+          <td><%= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= argument.published %> <%= link_to 'Publish', publish_question_path(argument), method: :post %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<h1>All arguments </h1>
+<table class="table table-striped">
 
   <tbody>
   <% @arguments.each do |argument| %>
       <tr>
-        <td><%= argument.question %></td>
+        <td><%= argument.title %></td>
         <td><%= link_to 'Show', argument %></td>
         <td><%= link_to 'Edit', edit_argument_path(argument) %></td>
         <td><%= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,6 +51,19 @@
   </tbody>
 </table>
 
-<br>
+<h1>All Questions: </h1>
+  <table class="table table-striped">
 
-<%= link_to 'New Argument', new_argument_path %>
+    <tbody>
+    <% @questions.each do |argument| %>
+        <tr>
+          <td><%= argument.question %></td>
+          <td><%= link_to 'Show', argument %></td>
+          <td><%= link_to 'Edit', edit_question_path(argument) %></td>
+          <td><%= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= argument.published %> <%= link_to 'Publish', publish_question_path(argument), method: :post %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

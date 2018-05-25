@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
-  before_action :allowed?, only: [:edit, :update, :destroy, :adminpanel]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :publishquestion]
+  before_action :allowed?, only: [:edit, :publishquestion, :update, :destroy, :adminpanel]
   # GET /questions
   # GET /questions.json
   def index
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @question, notice: 'Question was successfully submitted. Moderation will take 2-3 days.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -60,6 +60,17 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def publishquestion
+
+    if @question.published == true
+      @question.update(published: false)
+    else
+      @question.update(published: true)
+    end
+
+    redirect_to adminpanel_path
   end
 
   private

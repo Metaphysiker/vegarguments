@@ -1,5 +1,9 @@
 class Argument < ApplicationRecord
 
+  validates :argument, presence: true
+
+   before_save :sanitize_url
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -18,6 +22,7 @@ class Argument < ApplicationRecord
                   :if => lambda { |record| record.published == true }
 
   scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
 
   def question
     parent.question
@@ -25,6 +30,11 @@ class Argument < ApplicationRecord
 
   def parent
     Question.find(self.question_id)
+  end
+
+  private
+  def sanitize_url
+    self.url = "http://#{self.url}" unless self.url =~ /^https?:\/\//
   end
 
 end

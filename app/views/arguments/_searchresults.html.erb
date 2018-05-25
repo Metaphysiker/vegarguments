@@ -10,7 +10,7 @@
 
     <% @questions.each do |question| %>
 
-    <%=  render partial: "arguments/questionshowcase", locals: {question: question, arguments: @arguments.where(question_id: question.id) } %>
+    <%=  render partial: "arguments/questionshowcase", locals: {question: question, arguments: @arguments.where(question_id: question.id), show: false } %>
 
     <% end %>
 

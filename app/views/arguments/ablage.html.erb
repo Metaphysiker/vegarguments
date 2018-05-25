@@ -9,25 +9,21 @@
     <p>
       Here is an example:
     </p>
-        <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(question_id: Question.first.arguments.first.id), show: false } %>
-
-        <hr />
-          <h3>Use this database!</h3>
-          <p>
-            You can browse for existing questions and arguments here: <%= link_to "Browse", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
-          <p>
-            You can download the current database as csv-file here: <%= link_to "Download database", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
-          <p>
-            You can access this database via API. Take a look here: <%= link_to "How to use the API", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
-          <p>
-            You can embed or share questions and arguments via Social Media here: <%= link_to "Share", arguments_path, class: "btn btn-sm btn-success" %>
-          </p>
+    <p>
+    <strong>
+      Why not eat meat?
+    </strong>
+    <br>
+    Because the meat industry <b>is mostly cruel to animals</b>.
+    The meat industry <b>isn't interested in animal welfare</b>, it is <b>interested in making profit</b>.
+    Making profit and treating animals well is often <b>incompatible</b> because treating animals well is demanding.
+    What do you think does the meat industry care more about? Good salaries or animal welfare?
+      https://www.rollingstone.com/feature/belly-beast-meat-factory-farms-animal-activists
+    </p>
+  https://www.srf.ch/kultur/gesellschaft-religion/das-tier-und-wir/tierisch-gute-argumente-gegen-den-fleischkonsum
 
   <hr />
-    <h3>Contribute!</h3>
+    <h3>Contribute</h3>
     <p>
       You can contribute to this database in several ways.
       <ul>
@@ -56,6 +52,19 @@
     Go to "Submit" and enter your suggestion or suggest a better answer to an existing question.
   </p>
 
+  <h3>Use this database</h3>
+  <p>
+    Browse here.
+  </p>
+  <p>
+    You can download the current database as csv-file here: Download
+  </p>
+  <p>
+    You can access this database via API. Take a look here: How to use this database
+  </p>
+  <p>
+    Social Media
+  </p>
 
   <p>
   <h3>

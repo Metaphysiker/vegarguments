@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/adminpanel', to: 'arguments#adminpanel'
 
   post "/arguments/publishargument/:id", to: 'arguments#publishargument', as: 'publish_argument'
+  post "/questions/publishquestion/:id", to: 'questions#publishquestion', as: 'publish_question'
 
   post "/arguments/submitsuggestion/:id", to: 'arguments#submitsuggestion', as: 'submit_suggestion'
 

@@ -4,6 +4,9 @@ class ArgumentsController < ApplicationController
 
   def adminpanel
     @arguments = Argument.all
+    @questions = Question.all
+    @unpublishedarguments = Argument.unpublished
+    @unpublishedquestions = Question.unpublished
   end
 
   def submittranslation
@@ -25,7 +28,7 @@ class ArgumentsController < ApplicationController
       #arguments = results.where(searchable_type: "Argument")
       #questions = results.where(searchable_type: "Question")
       #arguments_ids = arguments
-      questions = Question.basic_search_for(search)
+      questions = Question.published.basic_search_for(search)
       @arguments = Argument.published.basic_search_for(search)
 
       questions = questions + Question.find(@arguments.pluck(:question_id).uniq)
@@ -88,7 +91,7 @@ class ArgumentsController < ApplicationController
 
     respond_to do |format|
       if @argument.save
-        format.html { redirect_to @argument, notice: 'Argument was successfully created.' }
+        format.html { redirect_to @argument, notice: 'Argument was successfully created. Moderation will take 2-3 days.' }
         format.json { render :show, status: :created, location: @argument }
       else
         format.html { render :new }

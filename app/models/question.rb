@@ -1,5 +1,7 @@
 class Question < ApplicationRecord
 
+  validates :question, presence: true, uniqueness: true
+
   extend FriendlyId
   friendly_id :question, use: :slugged
 
@@ -15,6 +17,8 @@ class Question < ApplicationRecord
 
   multisearchable :against => [:question]
 
+  scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
 
   def should_generate_new_friendly_id?
     slug.blank? || question_changed?

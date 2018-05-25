@@ -20,6 +20,8 @@
           <p>
             <% if question.arguments.empty? %>
               No arguments yet available. Add one here: <%= link_to "Submit argument", new_argument_path(question: question.id), class: "btn btn-success" %>
+              <% elsif show == true %>
+              <%= link_to "Submit new argument", new_argument_path(question: question.id), class: "btn btn-success" %>
               <% elsif question.arguments.count != arguments.count %>
                 <%= link_to "View all arguments", question_path(question), class: "btn btn-success" %>
           <% end %>
