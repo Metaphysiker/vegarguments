@@ -4,7 +4,7 @@
   <div class="argumenttitle text-center rounded p-1"><%= link_to argument.title, argument_path(argument) %>
   <br>
   <%= social_share_button_tag(argument.question, 'data-facebook-title' => argument.question, 'data-twitter-title' => argument.question.to_s + " " + argument.title.to_s, :url => argument.hyperlink, :desc => argument.clean_argument) %>
-  <%= social_share_button_tag(argument.question, :url => argument.hyperlink, :desc => argument.clean_argument) %>
+  <%= social_share_button_tag(argument.question, :url => argument.hyperlink, :desc => argument.question) %>
 </div>
 
 </p>
