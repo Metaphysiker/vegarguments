@@ -1,7 +1,11 @@
 <div class="rounded p-3 mb-3 jumbotron-bg">
 
 <p>
-  <div class="argumenttitle text-center rounded p-1"><%= link_to argument.title, argument_path(argument) %></div>
+  <div class="argumenttitle text-center rounded p-1"><%= link_to argument.title, argument_path(argument) %>
+  <br>
+  <%= social_share_button_tag(argument.title, :url => argument.hyperlink, desc: "The summary of page") %>
+</div>
+
 </p>
 <hr />
       <%=  render partial: "arguments/sanitizedargument", locals: {argument: argument} %>

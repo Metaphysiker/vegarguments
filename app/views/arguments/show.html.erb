@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="jumbotron">
-  <i>
-    <%= link_to @argument.parent.question, question_path(@argument.parent) %>
-  </i>
+  <p class="text-center">
+    <i><%= link_to @argument.parent.question, question_path(@argument.parent) %></i>
+  </p>
 
   <hr />
 
