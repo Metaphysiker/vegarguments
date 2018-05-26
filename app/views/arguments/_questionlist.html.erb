@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col-8">Question</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% questions.each do |question| %>
+    <tr>
+      <td><%= question.question %></td>
+      <td><%= link_to "Submit new argument", new_argument_path(question: question.id), class: "btn btn-success multilinebutton" %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

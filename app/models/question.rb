@@ -19,6 +19,8 @@ class Question < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
+  scope :without_arguments, -> { left_outer_joins(:arguments).where(arguments: { id: nil }) }
+  scope :fewer_arguments_than, -> (count) { select{ |q| q.arguments.length < count} }
 
   def should_generate_new_friendly_id?
     slug.blank? || question_changed?

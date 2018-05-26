@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :questions
-  resources :arguments
-
   devise_for :users
   devise_for :models
   root 'static_pages#welcome'
@@ -18,6 +15,10 @@ Rails.application.routes.draw do
   get '/visits', to: 'static_pages#visits'
   get '/contact', to: 'static_pages#contact', as: 'contact'
   get '/contribute', to: 'static_pages#contribute', as: 'contribute'
+  get '/overview', to: 'static_pages#overview', as: 'overview'
+
+  resources :questions
+  resources :arguments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

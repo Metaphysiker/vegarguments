@@ -3,6 +3,10 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def overview
+    @questions_with_few_arguments = Question.published.fewer_arguments_than(2)
+  end
+
   def visits
 
   end
