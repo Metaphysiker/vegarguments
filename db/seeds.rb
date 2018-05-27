@@ -8,8 +8,8 @@
 
 Language.create!([
   {name: "Deutsch", abbreviation: "de"},
-  {name: "English", abbreviation: "en"},
-  {name: "Francais", abbreviation: "fr"}
+  {name: "English", abbreviation: "en"}
+  #{name: "Francais", abbreviation: "fr"}
 ])
 
 q1 = Question.create!(

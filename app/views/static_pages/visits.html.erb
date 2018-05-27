@@ -10,8 +10,20 @@
 Visits total: <%= Ahoy::Visit.all.count %>
 <br>
 
-<%= bar_chart Ahoy::Event.select(:visit_id).distinct.group(:properties).count %>
+<%= bar_chart Ahoy::Event.select(:visit_id).distinct.group(:properties).count, height: "1000px" %>
 
 <br>
+Arguments: <br>
+<%= bar_chart Ahoy::Event.select(:visit_id).where_props(controller: "arguments").group(:properties).count, height: "1000px" %>
+
+<br>
+Static Pages: <br>
+<%= bar_chart Ahoy::Event.select(:visit_id).distinct.where_props(controller: "static_pages").group(:properties).count, height: "1000px" %>
+
+<br>
+Kontakt: <br>
 <%= bar_chart Ahoy::Event.select(:visit_id).distinct.where("name like ?", "hire:%").group(:name).count %>
+<br>
+Buttonclick: <br>
+<%= bar_chart Ahoy::Event.select(:visit_id).distinct.where("name like ?", "buttonclick:%").group(:name).count %>
 </div>

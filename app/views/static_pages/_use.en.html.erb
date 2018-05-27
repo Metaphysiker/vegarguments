@@ -1,0 +1,37 @@
+<div class="rounded greyish-bg p-4 mb-1">
+  <h3 class="text-center">Use this database</h3>
+  <hr />
+    <p>
+      <b>Browse questions and arguments.</b> <br>
+       <%= link_to t('browse_question_and_arguments'), arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+     </p>
+       <p>
+      <b>Download the current database in different formats.</b>
+       <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-success btn-lg multilinebutton mb-2", :data => { :buttonclick => 'pdf-all'} %>
+       <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-success btn-lg multilinebutton mb-2", :data => { :buttonclick => 'csv-all'} %>
+       <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-success btn-lg multilinebutton mb-2", :data => { :buttonclick => 'json-all'} %>
+     </p>
+     <p>
+
+      <b>Access this database via API.</b> <br>
+      <%= link_to "How to use the API", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+
+  </p>
+  <p>
+        <b>Embed or share questions and arguments via Social Media.</b><br>
+         <%= link_to "Share", arguments_path, class: "btn btn-success btn-lg multilinebutton" %>
+
+</p>
+</div>
+
+<hr />
+
+<script>
+
+    $( document ).ready(function() {
+
+        $("[data-buttonclick]").click(function(){
+            ahoy.track("buttonclick: " + $(this).attr( "data-buttonclick" ), {language: "JavaScript"});
+        });
+    });
+</script>
