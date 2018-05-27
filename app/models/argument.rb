@@ -44,7 +44,11 @@ class Argument < ApplicationRecord
   end
 
   def hyperlink
-    Rails.configuration.host.to_s + "arguments/" + slug
+    #host = Rails.configuration.host.to_s
+    #Rails.application.routes.url_helpers.argument_url(self, :id => self.id, :only_path => false, :host => host)
+    Rails.configuration.host.to_s + I18n.locale.to_s + "/arguments/" + slug
+    #Rails.application.routes.url_helpers.arguments_url
+    #Rails.application.routes.url_helpers.arguments_url(:host => Rails.configuration.host.to_s)
   end
 
   def length
@@ -52,12 +56,12 @@ class Argument < ApplicationRecord
   end
 
   def self.to_csv
-  #attributes = %w{question title clean_argument author}
-  attributes = [Question.model_name.human, Argument.human_attribute_name("title"), Argument.human_attribute_name("argument"), Argument.human_attribute_name("author"), Argument.human_attribute_name("language")]
+  #attributes = %w{question title clean_argument author, language, link}
+  attributes = [Question.model_name.human, Argument.human_attribute_name("title"), Argument.human_attribute_name("argument"), Argument.human_attribute_name("author"), Argument.human_attribute_name("language"), "Link"]
     CSV.generate(headers: true) do |csv|
     csv << attributes
       all.each do |argument|
-        csv << [argument.question, argument.title, argument.clean_argument, argument.author, I18n.t(argument.language.to_s)]
+        csv << [argument.question, argument.title, argument.clean_argument, argument.author, I18n.t(argument.language.to_s), argument.hyperlink]
       end
     end
   end

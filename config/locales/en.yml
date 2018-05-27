@@ -45,10 +45,12 @@ en:
   give_feedback: "Give Feedback"
   view_all_arguments: "View all arguments"
   no_arguments_yet: "No arguments yet available."
+  overview: "Overview"
   activerecord:
     models:
       argument: "Argument"
       question: "Question"
+      language: "Language"
     attributes:
       argument:
         title: "Title"

@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-bg">
+    <h2>
+      Lasst uns besser zu Tieren sein.
+    </h2>
+    <hr />
+    <p>
+      Veggie-Database ist eine Datenbank von Argumenten gegen Tierleid.
+    </p>
+    <p>
+      Hier ein Beispiel:
+    </p>
+        <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(id: Question.first.arguments.first.id), show: false } %>
+
+        <hr />
+<%=  render partial: "static_pages/use" %>
+
+<%=  render partial: "static_pages/contribute" %>
+
+</div>

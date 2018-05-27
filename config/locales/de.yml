@@ -45,10 +45,12 @@ de:
   give_feedback: "Feedback geben"
   view_all_arguments: "Alle Argumente anzeigen"
   no_arguments_yet: "Keine Argumente vorhanden."
+  overview: "Übersicht"
   activerecord:
     models:
       argument: "Argument"
       question: "Frage"
+      language: "Sprache"
     attributes:
       argument:
         title: "Titel"

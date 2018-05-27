@@ -104,3 +104,6 @@ If we want them to care about animal suffering, we have to give them good reason
   For instance, the "Cows are holy"-example seems to imply that some animals aren't holy.
   And the undesirable effect will be that some people may care about cows but not about other animals.
 </p>
+
+<%= link_to language.name, Rails.configuration.host.to_s + language.abbreviation + "/" + request.env['PATH_INFO'], class:"dropdown-item" %>
+<%= link_to language.name, root_path(locale: language.abbreviation), class:"dropdown-item" %>
