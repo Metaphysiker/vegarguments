@@ -38,6 +38,11 @@ class Argument < ApplicationRecord
     Question.find(self.question_id)
   end
 
+  def languagefull
+    #Language.find_by_abbreviation(self.language).name
+    I18n.t(self.language.to_s)
+  end
+
   def hyperlink
     Rails.configuration.host.to_s + "arguments/" + slug
   end
@@ -47,12 +52,12 @@ class Argument < ApplicationRecord
   end
 
   def self.to_csv
-  attributes = %w{question title clean_argument author}
-
+  #attributes = %w{question title clean_argument author}
+  attributes = [Question.model_name.human, Argument.human_attribute_name("title"), Argument.human_attribute_name("argument"), Argument.human_attribute_name("author"), Argument.human_attribute_name("language")]
     CSV.generate(headers: true) do |csv|
     csv << attributes
       all.each do |argument|
-        csv << attributes.map{ |attr| argument.send(attr) }
+        csv << [argument.question, argument.title, argument.clean_argument, argument.author, I18n.t(argument.language.to_s)]
       end
     end
   end

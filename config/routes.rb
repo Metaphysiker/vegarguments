@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/visits', to: 'static_pages#visits'
   get '/contact', to: 'static_pages#contact', as: 'contact'
   get '/contribute', to: 'static_pages#contribute', as: 'contribute'
+  get '/use', to: 'static_pages#use', as: 'use'
   get '/overview', to: 'static_pages#overview', as: 'overview'
 
   resources :questions

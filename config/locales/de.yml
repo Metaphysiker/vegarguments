@@ -29,31 +29,31 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  en: "English"
-  de: "German"
-  fr: "French"
-  hello: "Hello world"
-  browse: "Browse"
-  use: "Use"
-  contribute: "Contribute"
-  contact: "Contact"
-  browse_question_and_arguments: "Browse questions and arguments"
-  submit_a_new_question: "Submit a new question"
-  submit_a_new_argument: "Submit a new argument"
-  show_questions_with_no_or_few_arguments: "Show questions with no or few arguments"
-  give_feedback: "Give Feedback"
-  view_all_arguments: "View all arguments"
-  no_arguments_yet: "No arguments yet available."
+de:
+  en: "Englisch"
+  de: "Deutsch"
+  fr: "Französisch"
+  hello: "Hallo Welt"
+  browse: "Stöbern"
+  use: "Benutzen"
+  contribute: "Beitragen"
+  contact: "Kontakt"
+  browse_question_and_arguments: "Fragen und Argumente durchstöbern"
+  submit_a_new_question: "Frage hinzufügen"
+  submit_a_new_argument: "Argument hinzufügen"
+  show_questions_with_no_or_few_arguments: "Fragen mit wenigen Argumenten anzeigen"
+  give_feedback: "Feedback geben"
+  view_all_arguments: "Alle Argumente anzeigen"
+  no_arguments_yet: "Keine Argumente vorhanden."
   activerecord:
     models:
       argument: "Argument"
-      question: "Question"
+      question: "Frage"
     attributes:
       argument:
-        title: "Title"
+        title: "Titel"
         argument: "Argument"
-        language: "Language"
-        author: "Author"
-        url: "Source"
+        language: "Sprache"
+        author: "Autor"
+        url: "Quelle"
       # will translate User attribute "login" as "Handle"

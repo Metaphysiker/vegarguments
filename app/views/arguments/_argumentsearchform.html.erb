@@ -1,5 +1,5 @@
 <%= form_tag(arguments_path, method: "get", remote: true, class: "form-group") do %>
-    <%= text_field_tag(:search, nil, placeholder: "Browse for arguments", autocomplete: :off, class: "form-control") %>
+    <%= text_field_tag(:search, nil, placeholder: t('browse_question_and_arguments'), autocomplete: :off, class: "form-control") %>
     <%= submit_tag("Search", id: "triggersearch", class: "invisible") %>
 <% end %>
 

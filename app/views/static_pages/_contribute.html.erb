@@ -7,12 +7,12 @@
     <li>
       <b>Submit new questions</b>. (Please make sure that a similar question does not already exist).
       <br>
-      <%= link_to "Submit a new question", new_question_path, class: "btn btn-success btn-lg multilinebutton" %>
+      <%= link_to t('submit_a_new_question'), new_question_path, class: "btn btn-success btn-lg multilinebutton" %>
     </li>
     <li>
       <b>Submit new arguments to questions.</b>
       <br>
-        <%= link_to "Show questions with no or few arguments", overview_path, class: "btn btn-success btn-lg multilinebutton" %>
+        <%= link_to t('show_questions_with_no_or_few_arguments'), overview_path, class: "btn btn-success btn-lg multilinebutton" %>
       <br>
     </li>
     <li>
@@ -21,7 +21,7 @@
     <li>
       <b>Give feedback.</b> Bad design? Missing features? Missing language? Suggestion for improvements?
       <br>
-      <%= link_to "Give feedback", contact_path, class: "btn btn-success btn-lg multilinebutton" %>
+      <%= link_to t('give_feedback'), contact_path, class: "btn btn-success btn-lg multilinebutton" %>
     </li>
   </ul>
 </p>

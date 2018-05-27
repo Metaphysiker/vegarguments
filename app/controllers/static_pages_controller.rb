@@ -16,5 +16,11 @@ class StaticPagesController < ApplicationController
   end
 
   def contribute
+
   end
+
+  def use
+
+  end
+
 end
