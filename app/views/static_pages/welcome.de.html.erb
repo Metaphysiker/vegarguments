@@ -7,7 +7,7 @@
       Veggie-Database ist eine Datenbank von Argumenten gegen Tierleid.
     </p>
     <p>
-      Hier ein Beispiel:
+      Hier ist ein kurzes Beispiel:
     </p>
         <%=  render partial: "arguments/questionshowcase", locals: {question: Question.first, arguments: Argument.where(id: Question.first.arguments.first.id), show: false } %>
 
