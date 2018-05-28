@@ -19,3 +19,7 @@
 .byebug_history
 
 /config/secrets.yml
+
+/lib/tasks/dump.rake
+
+/db/dumps/*
