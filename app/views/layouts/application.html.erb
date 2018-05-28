@@ -44,5 +44,17 @@
   <div class="container">
     <%= yield %>
   </div>
+
+  <div class="my-4">
+    &nbsp;
+  </div>
+
+<footer class="footer bg-dark">
+  <div class="text-center">
+   <%= link_to "Impressum", impressum_path %> |
+    <%= link_to t('contact'), contact_path %> 
+  </div>
+</footer>
+
   </body>
 </html>

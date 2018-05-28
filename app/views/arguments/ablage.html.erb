@@ -107,3 +107,14 @@ If we want them to care about animal suffering, we have to give them good reason
 
 <%= link_to language.name, Rails.configuration.host.to_s + language.abbreviation + "/" + request.env['PATH_INFO'], class:"dropdown-item" %>
 <%= link_to language.name, root_path(locale: language.abbreviation), class:"dropdown-item" %>
+
+
+<div class="text-center p-2 fixed-bottom navbar navbar-dark bg-dark">
+  <%= link_to root_path do %>
+      <div class="navbar-brand mx-auto d-inline">| Veggie Databse |</div>
+  <% end %>
+
+  <%= link_to impressum_path do %>
+      <div class="navbar-brand d-inline">| Impressum |</div>
+  <% end %>
+</div>
