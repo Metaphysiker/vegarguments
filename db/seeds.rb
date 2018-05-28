@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# rake db:seed:dump MODELS=Argument,Question APPEND=true
+
 Language.create!([
   {name: "Deutsch", abbreviation: "de"},
   {name: "English", abbreviation: "en"}
