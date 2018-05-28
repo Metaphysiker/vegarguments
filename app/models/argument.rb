@@ -2,9 +2,10 @@ class Argument < ApplicationRecord
 
   require 'csv'
 
+  validates :title, presence: true
   validates :argument, presence: true
 
-   before_save :sanitize_url
+  before_save :sanitize_url
 
   extend FriendlyId
   friendly_id :title, use: :slugged

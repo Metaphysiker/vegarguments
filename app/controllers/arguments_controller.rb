@@ -137,6 +137,10 @@ class ArgumentsController < ApplicationController
     end
   end
 
+  def impressum
+
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

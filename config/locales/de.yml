@@ -53,6 +53,8 @@ de:
   embed_or_share_questions_and_arguments_via_social_media: "Verbreite Fragen und Argumente über soziale Medien."
   how_to_share_via_social_media: "Wie verbreite ich über soziale Medien?"
   url-input-form: "Quelle (z.B. http://www.tier-im-fokus.ch/ )"
+  found_nothing: "Nichts gefunden?"
+  create: "Erstellen"
   activerecord:
     models:
       argument: "Argument"
@@ -65,4 +67,6 @@ de:
         language: "Sprache"
         author: "Autor"
         url: "Quelle"
-      # will translate User attribute "login" as "Handle"
+      question:
+        question: "Frage"
+        language: "Sprache"

@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     get '/contribute', to: 'static_pages#contribute', as: 'contribute'
     get '/use', to: 'static_pages#use', as: 'use'
     get '/overview', to: 'static_pages#overview', as: 'overview'
+    get '/impressum', to: 'static_pages#impressum', as: 'impressum'
   end
+
+
 
   post "/arguments/publishargument/:id", to: 'arguments#publishargument', as: 'publish_argument'
   post "/questions/publishquestion/:id", to: 'questions#publishquestion', as: 'publish_question'

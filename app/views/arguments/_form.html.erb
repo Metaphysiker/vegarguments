@@ -23,14 +23,14 @@
           </div>
       <% end %>
     <%= f.input :title %>
-    <%= f.label :argument, Argument.model_name.human %>
+    <%= f.label :argument %>
     <%= f.text_area :argument, :class => "tinymce", :rows => 15, :cols => 120, id: :argument_argument %>
     <br>
     <%= f.input :author %>
-    <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: "en" %>
+    <%= f.input :language, collection: Language.all, value_method: :abbreviation, selected: I18n.locale.to_s %>
     <%= f.hidden_field :question_id, value: question_id %>
     <%= f.input :url, label: t('url-input-form') %>
-    <%= f.button :submit %>
+    <%= f.button :submit, t('create'), class: "btn btn-success btn-lg" %>
 <% end %>
 
 <%= tinymce %>

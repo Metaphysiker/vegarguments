@@ -5,16 +5,19 @@
       <b><%= t('browse_question_and_arguments') %>.</b> <br>
        <%= link_to t('browse_question_and_arguments'), arguments_path, class: "btn btn-success btn-lg my-2 multilinebutton" %>
      </p>
+     <hr />
        <p>
       <b><%= t('download_curent_database_in_different_formats') %></b>
-       <br> <%= link_to 'Download PDF', arguments_path(:format => :pdf), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'pdf-all'} %>
-       <br> <%= link_to 'Download CSV', arguments_path(:format => :csv), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'csv-all'} %>
-       <br> <%= link_to 'Download JSON', arguments_path(:format => :json), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'json-all'} %>
+       <br> <%= link_to 'Download - PDF', arguments_path(:format => :pdf), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'pdf-all'} %>
+       <br> <%= link_to 'Download - CSV', arguments_path(:format => :csv), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'csv-all'} %>
+       <br> <%= link_to 'Download - JSON', arguments_path(:format => :json), class: "btn btn-success btn-lg multilinebutton my-2", :data => { :buttonclick => 'json-all'} %>
      </p>
+     <hr />
      <p>
       <b><%= t('access_this_database_via_api') %></b> <br>
       <%= link_to t('how_to_use_api'), arguments_path, class: "btn btn-success btn-lg my-2 multilinebutton" %>
   </p>
+  <hr />
   <p>
         <b><%= t('embed_or_share_questions_and_arguments_via_social_media') %></b><br>
          <%= link_to t('how_to_share_via_social_media'), arguments_path, class: "btn btn-success btn-lg my-2 multilinebutton" %>

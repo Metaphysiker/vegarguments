@@ -53,6 +53,8 @@ en:
   embed_or_share_questions_and_arguments_via_social_media: "Embed or share questions and arguments via Social Media."
   how_to_share_via_social_media: "How can I share questions and arguments?"
   url-input-form: "Source (e.g. http://www.petersinger.info/impact)"
+  found_nothing: "Nothing found?"
+  create: "Create"
   activerecord:
     models:
       argument: "Argument"
@@ -65,4 +67,7 @@ en:
         language: "Language"
         author: "Author"
         url: "Source"
+      question:
+        question: "Question"
+        language: "Language"
       # will translate User attribute "login" as "Handle"
