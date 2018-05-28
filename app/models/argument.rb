@@ -57,11 +57,11 @@ class Argument < ApplicationRecord
 
   def self.to_csv
   #attributes = %w{question title clean_argument author, language, link}
-  attributes = [Question.model_name.human, Argument.human_attribute_name("title"), Argument.human_attribute_name("argument"), Argument.human_attribute_name("author"), Argument.human_attribute_name("language"), "Link"]
+  attributes = [Question.model_name.human, Argument.human_attribute_name("title"), Argument.human_attribute_name("argument"), Argument.human_attribute_name("author"), Argument.human_attribute_name("url"), Argument.human_attribute_name("language"), "Link"]
     CSV.generate(headers: true) do |csv|
     csv << attributes
       all.each do |argument|
-        csv << [argument.question, argument.title, argument.clean_argument, argument.author, I18n.t(argument.language.to_s), argument.hyperlink]
+        csv << [argument.question, argument.title, argument.clean_argument, argument.author, argument.url, I18n.t(argument.language.to_s), argument.hyperlink]
       end
     end
   end

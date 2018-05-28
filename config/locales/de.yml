@@ -36,7 +36,8 @@ de:
   hello: "Hallo Welt"
   browse: "Stöbern"
   use: "Benutzen"
-  contribute: "Beitragen"
+  use_this_database: "Diese Datenbank benutzen"
+  contribute: "Mithelfen"
   contact: "Kontakt"
   browse_question_and_arguments: "Fragen und Argumente durchstöbern"
   submit_a_new_question: "Frage hinzufügen"
@@ -46,6 +47,12 @@ de:
   view_all_arguments: "Alle Argumente anzeigen"
   no_arguments_yet: "Keine Argumente vorhanden."
   overview: "Übersicht"
+  download_curent_database_in_different_formats: "Lade die Datenbank herunter, in PDF, CSV oder JSON."
+  access_this_database_via_api: "Greife auf diese Datenbank über API zu."
+  how_to_use_api: "Wie vervende ich die API?"
+  embed_or_share_questions_and_arguments_via_social_media: "Verbreite Fragen und Argumente über soziale Medien."
+  how_to_share_via_social_media: "Wie verbreite ich über soziale Medien?"
+  url-input-form: "Quelle (z.B. http://www.tier-im-fokus.ch/ )"
   activerecord:
     models:
       argument: "Argument"
