@@ -12,7 +12,8 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <% Language.all.each do |language| %>
         <% unless I18n.locale.to_s == language.abbreviation %>
-          <%= link_to language.name, url_for(locale: language.abbreviation), class:"dropdown-item" %>
+          <%# link_to language.name, url_for(locale: language.abbreviation), class:"dropdown-item" %>
+          <%= link_to language.name, request.query_parameters.merge({:locale => language.abbreviation}), class:"dropdown-item" %>
         <% end %>
       <% end %>
     </div>
