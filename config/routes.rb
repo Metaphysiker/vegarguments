@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   devise_for :models
 
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
     resources :questions
     resources :arguments
+    resources :images
     get '/adminpanel', to: 'arguments#adminpanel'
     get '/visits', to: 'static_pages#visits'
     get '/contact', to: 'static_pages#contact', as: 'contact'
